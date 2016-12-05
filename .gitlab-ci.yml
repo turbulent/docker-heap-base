@@ -10,7 +10,7 @@ stages:
 build-image:
   stage: build
   script:
-    - docker build -t ${REGISTRY}/${IMAGE}:${CI_BUILD_REF_NAME}
+    - docker build -t ${REGISTRY}/${IMAGE}:${CI_BUILD_REF_NAME} .
 
 # Only push to docker-registry on tags
 push-image:
