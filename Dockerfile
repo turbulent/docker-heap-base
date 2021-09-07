@@ -11,7 +11,7 @@ RUN apt-get update &&  \
     ssmtp \
     bsd-mailx \
     supervisor \
-    python-pip \
+    python3-pip \
     python-yaml \
     apt-transport-https \
     lsb-release \
@@ -20,7 +20,6 @@ RUN apt-get update &&  \
     software-properties-common && \
   pip install pystache Jinja2 && \
   (adduser --system --uid 1000 --gid 33 --home /home/heap --shell /bin/bash heap) && \
-  usermod -G docker heap && \
   rm -rf /var/lib/apt/lists/* && \
   apt-get -y clean
 

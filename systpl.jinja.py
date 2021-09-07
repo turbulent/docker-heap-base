@@ -1,12 +1,12 @@
-#!/usr/bin/env python
-import sys 
+#!/usr/bin/env python3
+import sys
 import os
 import re
 from jinja2 import Environment, FileSystemLoader
 import json
 from pprint import pprint
 from optparse import OptionParser
- 
+
 PATH = os.path.dirname(os.path.abspath(__file__))
 
 def getShellOptions():
@@ -18,7 +18,7 @@ def ensurelist(v):
     return [ x for x in (v if isinstance(v, (list, tuple)) else [v]) ]
   else:
     return []
- 
+
 def main():
   (options,args) = getShellOptions()
   if not len(args) > 0:
@@ -42,9 +42,9 @@ def main():
     except Exception as err:
       context[key] = os.environ[key]
 
-  print( template.render( context ) ) 
- 
+  print( template.render( context ) )
+
 ########################################
- 
+
 if __name__ == "__main__":
     main()

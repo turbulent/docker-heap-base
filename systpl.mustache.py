@@ -1,18 +1,18 @@
-#!/usr/bin/env python
-import sys 
+#!/usr/bin/env python3
+import sys
 import os
 import re
 import pystache
 import json
 from pprint import pprint
 from optparse import OptionParser
- 
+
 PATH = os.path.dirname(os.path.abspath(__file__))
 
 def getShellOptions():
   parser = OptionParser(usage="usage: %prog [options] SOURCE")
   return parser.parse_args()
- 
+
 def main():
   (options,args) = getShellOptions()
   if not len(args) > 0:
@@ -36,9 +36,9 @@ def main():
       context[key] = os.environ[key]
 
   print( pystache.render( data, context) )
-  
- 
+
+
 ########################################
- 
+
 if __name__ == "__main__":
     main()
